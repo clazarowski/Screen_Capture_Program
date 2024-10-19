@@ -20,7 +20,14 @@ def screen_capture():
 
         print(f"Screenshot saved as {filename}")
 
-create_folder_if_not_exists()
-keyboard.add_hotkey('F9', screen_capture)
-keyboard.wait('esc')
-print("Program closed")
+def main():
+    create_folder_if_not_exists()
+
+    while True:
+        if keyboard.is_pressed('F9'): screen_capture()
+        elif keyboard.is_pressed('esc'): break
+    
+    print("Program closed")
+
+if __name__ == "__main__":
+    main()
