@@ -2,6 +2,7 @@ import os
 import keyboard
 import mss
 from datetime import datetime
+import time
 
 def create_folder_if_not_exists():
     if not os.path.exists("screenshots"):
@@ -24,8 +25,10 @@ def main():
     create_folder_if_not_exists()
 
     while True:
-        if keyboard.is_pressed('F9'): screen_capture()
-        elif keyboard.is_pressed('esc'): break
+        if keyboard.is_pressed('F9'): 
+            screen_capture()
+            time.sleep(1)
+        elif keyboard.is_pressed('F10'): break
     
     print("Program closed")
 
